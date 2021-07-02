@@ -20,13 +20,7 @@ const NotePad = () => {
   const [todos, setTodos] = React.useState([]);
   const [textInput, setTextInput] = React.useState('');
 
-  React.useEffect(() => {
-    getTodosFromUserDevice();
-  }, []);
 
-  React.useEffect(() => {
-    saveTodoToUserDevice(todos);
-  }, [todos]);
 
   const addTodo = () => {
     if (textInput == '') {
@@ -42,25 +36,7 @@ const NotePad = () => {
     }
   };
 
-  const saveTodoToUserDevice = async todos => {
-    try {
-      const stringifyTodos = JSON.stringify(todos);
-      await AsyncStorage.setItem('todos', stringifyTodos);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
-  const getTodosFromUserDevice = async () => {
-    try {
-      const todos = await AsyncStorage.getItem('todos');
-      if (todos != null) {
-        setTodos(JSON.parse(todos));
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const deleteTodo = todoId => {
     const newTodosItem = todos.filter(item => item.id != todoId);
