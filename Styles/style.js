@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 20,
         backgroundColor: COLORS.white,
+        paddingBottom: 60,
     },
     inputContainer: {
         height: 50,

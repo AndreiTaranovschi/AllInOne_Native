@@ -147,12 +147,12 @@ const styles = StyleSheet.create({
   footer: {
     position: 'absolute',
     bottom: 0,
-
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 20,
     backgroundColor: COLORS.white,
+    paddingBottom: 60,
   },
   inputContainer: {
     height: 50,
